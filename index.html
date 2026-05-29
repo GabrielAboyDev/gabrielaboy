@@ -40,7 +40,7 @@
     .page {
       max-width: 1320px;
       margin: 0 auto;
-      padding: 32px 48px 32px;
+      padding: 96px 48px 32px;
       display: grid;
       grid-template-columns: 360px 1fr;
       gap: 72px;
@@ -311,6 +311,33 @@
       letter-spacing: 0.02em;
     }
     .carousel-hint svg { width: 12px; height: 12px; }
+
+    /* ===== COMING-SOON CARDS + TOAST ===== */
+    .card-coming-soon { cursor: pointer; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 32px;
+      transform: translate(-50%, 16px);
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 18px;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 14px; font-weight: 600;
+      letter-spacing: -0.005em;
+      box-shadow: 0 14px 30px -14px rgba(28,31,51,0.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 100;
+    }
+    .toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    .toast svg { width: 16px; height: 16px; }
   </style>
 </head>
 <body>
@@ -374,24 +401,34 @@
         <div class="carousel" aria-roledescription="carousel" aria-label="GitApplied mocks">
           <div class="carousel-track">
             <div class="carousel-slide">
-              <span class="slide-label">PRD</span>
-              <span class="slide-count">1 / 4</span>
-              <iframe src="githired/prd/" loading="lazy" title="GitHired — PRD"></iframe>
+              <span class="slide-label">Landing</span>
+              <span class="slide-count">1 / 6</span>
+              <iframe src="mocks/githired/landing.html" loading="lazy" title="GitApplied — Landing"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Business plan</span>
-              <span class="slide-count">2 / 4</span>
-              <iframe src="githired/business-plan/" loading="lazy" title="GitHired — Business plan"></iframe>
+              <span class="slide-label">Board</span>
+              <span class="slide-count">2 / 6</span>
+              <iframe src="mocks/githired/board.html" loading="lazy" title="GitApplied — Board"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Marketing plan</span>
-              <span class="slide-count">3 / 4</span>
-              <iframe src="githired/marketing-plan/" loading="lazy" title="GitHired — Marketing plan"></iframe>
+              <span class="slide-label">Job detail</span>
+              <span class="slide-count">3 / 6</span>
+              <iframe src="mocks/githired/job-detail.html" loading="lazy" title="GitApplied — Job detail"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">OSS plan</span>
-              <span class="slide-count">4 / 4</span>
-              <iframe src="githired/oss-plan/" loading="lazy" title="GitHired — OSS plan"></iframe>
+              <span class="slide-label">Tailor</span>
+              <span class="slide-count">4 / 6</span>
+              <iframe src="mocks/githired/tailor.html" loading="lazy" title="GitApplied — Tailor"></iframe>
+            </div>
+            <div class="carousel-slide">
+              <span class="slide-label">Outreach</span>
+              <span class="slide-count">5 / 6</span>
+              <iframe src="mocks/githired/outreach.html" loading="lazy" title="GitApplied — Outreach"></iframe>
+            </div>
+            <div class="carousel-slide">
+              <span class="slide-label">Settings</span>
+              <span class="slide-count">6 / 6</span>
+              <iframe src="mocks/githired/settings.html" loading="lazy" title="GitApplied — Settings"></iframe>
             </div>
           </div>
         </div>
@@ -452,7 +489,7 @@
       </a>
 
       <!-- I Need A Script -->
-      <article class="card">
+      <article class="card card-coming-soon" data-coming-soon="I Need A Script">
         <div class="card-head">
           <div class="card-icon ic-needscript">
             <span class="glyph">{ }</span>
@@ -460,7 +497,7 @@
           <div class="card-name">I Need A Script</div>
           <div class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5Z"/></svg></span>0 users</div>
         </div>
-        <p class="card-desc">The open marketplace for scripts and skills</p>
+        <p class="card-desc">Why reinvent the wheel when you can search the marketplace of scripts and Claude skills?</p>
         <div class="carousel" aria-roledescription="carousel" aria-label="I Need A Script mocks">
           <div class="carousel-track">
             <div class="carousel-slide">
@@ -487,7 +524,7 @@
       </article>
 
       <!-- Tandem -->
-      <article class="card">
+      <article class="card card-coming-soon" data-coming-soon="Tandem">
         <div class="card-head">
           <div class="card-icon ic-tandem">
             <span class="glyph">⇄</span>
@@ -495,58 +532,58 @@
           <div class="card-name">Tandem</div>
           <div class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5Z"/></svg></span>0 users</div>
         </div>
-        <p class="card-desc">A two-person to-do list for couples who cohabit</p>
+        <p class="card-desc">An intelligent reminders app that knows when, where, and why to remind you.</p>
         <div class="carousel" aria-roledescription="carousel" aria-label="Tandem mocks">
           <div class="carousel-track">
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Splash</span>
+              <span class="slide-label">Splash</span>
               <span class="slide-count">1 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f1" loading="lazy" title="Tandem — Storyboard · Splash"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=1" loading="lazy" title="Tandem — Splash"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Invite partner</span>
+              <span class="slide-label">Invite partner</span>
               <span class="slide-count">2 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f2" loading="lazy" title="Tandem — Storyboard · Invite"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=2" loading="lazy" title="Tandem — Invite"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Today</span>
+              <span class="slide-label">Today</span>
               <span class="slide-count">3 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f3" loading="lazy" title="Tandem — Storyboard · Today"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=3" loading="lazy" title="Tandem — Today"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · New rule</span>
+              <span class="slide-label">New rule</span>
               <span class="slide-count">4 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f4" loading="lazy" title="Tandem — Storyboard · New rule"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=4" loading="lazy" title="Tandem — New rule"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Parsed rule</span>
+              <span class="slide-label">Parsed rule</span>
               <span class="slide-count">5 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f5" loading="lazy" title="Tandem — Storyboard · Parsed rule"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=5" loading="lazy" title="Tandem — Parsed rule"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Rule library</span>
+              <span class="slide-label">Rule library</span>
               <span class="slide-count">6 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f6" loading="lazy" title="Tandem — Storyboard · Library"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=6" loading="lazy" title="Tandem — Library"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Dinner ping</span>
+              <span class="slide-label">Dinner ping</span>
               <span class="slide-count">7 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f7" loading="lazy" title="Tandem — Storyboard · Ping"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=7" loading="lazy" title="Tandem — Ping"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Smart cancel</span>
+              <span class="slide-label">Smart cancel</span>
               <span class="slide-count">8 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f8" loading="lazy" title="Tandem — Storyboard · Smart cancel"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=8" loading="lazy" title="Tandem — Smart cancel"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Weather trigger</span>
+              <span class="slide-label">Weather trigger</span>
               <span class="slide-count">9 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f9" loading="lazy" title="Tandem — Storyboard · Weather"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=9" loading="lazy" title="Tandem — Weather"></iframe>
             </div>
             <div class="carousel-slide">
-              <span class="slide-label">Storyboard · Receipts</span>
+              <span class="slide-label">Receipts</span>
               <span class="slide-count">10 / 10</span>
-              <iframe src="tandem/landing/storyboard.html#f10" loading="lazy" title="Tandem — Storyboard · Receipts"></iframe>
+              <iframe src="tandem/landing/storyboard.html?f=10" loading="lazy" title="Tandem — Receipts"></iframe>
             </div>
           </div>
         </div>
@@ -558,6 +595,32 @@
 
     </main>
   </div>
+
+  <div class="toast" role="status" aria-live="polite" id="toast">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    <span data-toast-text>Coming soon</span>
+  </div>
+
+  <script>
+    (function () {
+      const toast = document.getElementById('toast');
+      const toastText = toast.querySelector('[data-toast-text]');
+      let hideTimer = null;
+
+      const showToast = (name) => {
+        toastText.textContent = name + ' is coming soon';
+        toast.classList.add('is-visible');
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => toast.classList.remove('is-visible'), 2400);
+      };
+
+      document.querySelectorAll('.card-coming-soon').forEach((card) => {
+        card.addEventListener('click', () => {
+          showToast(card.dataset.comingSoon || 'This');
+        });
+      });
+    })();
+  </script>
 
   <script>
     (function () {
