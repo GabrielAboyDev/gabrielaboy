@@ -51,9 +51,22 @@
 
   /* Frame visibility — :target-based switching */
   .frame { display: none; }
-  .frame#f1 { display: flex; }                /* default */
+  .frame:where(#f1) { display: flex; }                /* default */
   body:has(:target) .frame { display: none; }
   body:has(:target) .frame:target { display: flex; }
+  /* Embedded mode — ?f=N pins a single frame without using the URL hash
+     (avoids the iframe-fragment scroll-into-view that jolts the parent page) */
+  :root[data-pinned] .frame { display: none; }
+  :root[data-pinned="f1"]  #f1.frame,
+  :root[data-pinned="f2"]  #f2.frame,
+  :root[data-pinned="f3"]  #f3.frame,
+  :root[data-pinned="f4"]  #f4.frame,
+  :root[data-pinned="f5"]  #f5.frame,
+  :root[data-pinned="f6"]  #f6.frame,
+  :root[data-pinned="f7"]  #f7.frame,
+  :root[data-pinned="f8"]  #f8.frame,
+  :root[data-pinned="f9"]  #f9.frame,
+  :root[data-pinned="f10"] #f10.frame { display: flex; }
 
   .frame {
     flex-direction: column;
@@ -463,6 +476,12 @@
   }
 </style>
 </head>
+<script>
+  (function () {
+    var f = new URLSearchParams(location.search).get('f');
+    if (f && /^\d+$/.test(f)) document.documentElement.dataset.pinned = 'f' + f;
+  })();
+</script>
 <body>
   <div class="stage">
 
