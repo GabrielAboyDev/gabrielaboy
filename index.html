@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gabriel Aboy</title>
-  <meta name="description" content="Small useful tools, shipped in public from a kitchen table." />
+  <title>Personal Site</title>
+  <meta name="description" content="" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:        #e9e9e9;
-      --card:      #ffffff;
-      --ink:       #111111;
-      --ink-2:     #2a2a2a;
-      --muted:     #6b6b6b;
-      --line:      #ececec;
-      --pill-bg:   #eaeaff;
-      --pill-fg:   #4f4fcb;
-      --pill-dot:  #7a7af5;
-      --highlight: #f4c542;
-      --chart:     #f6a96b;
-      --chart-fill:rgba(246,169,107,0.32);
-      --grid-dot:  #d8d8d8;
-      --dark:      #1c1f33;
+      --bg:         #e9e9e9;
+      --card:       #ffffff;
+      --ink:        #111111;
+      --ink-2:      #2a2a2a;
+      --muted:      #6b6b6b;
+      --line:       #ececec;
+      --pill-bg:    #eaeaff;
+      --pill-fg:    #4f4fcb;
+      --pill-dot:   #7a7af5;
+      --highlight:  #f4c542;
+      --chart:      #f6a96b;
+      --chart-fill: rgba(246,169,107,0.32);
+      --grid-dot:   #d8d8d8;
+      --dark:       #1c1f33;
+      --pitch-link: #b8860b;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
@@ -103,7 +104,7 @@
       line-height: 1.4;
     }
     .news-pitch .link {
-      color: #b8860b;
+      color: var(--pitch-link);
       padding: 0 2px;
       font-weight: 700;
     }
@@ -115,11 +116,11 @@
       line-height: 1.5;
       max-width: 36ch;
     }
-    .blurb .point { display: inline-block; transform: rotate(-12deg); margin-left: 4px; }
 
     .socials {
       display: flex; align-items: center; gap: 22px;
       margin-bottom: 40px;
+      flex-wrap: wrap;
     }
     .socials a {
       color: var(--ink);
@@ -128,20 +129,6 @@
     }
     .socials a:hover { color: var(--muted); }
     .socials svg { width: 22px; height: 22px; }
-
-    .cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 22px;
-      background: var(--dark);
-      color: #fff;
-      border-radius: 12px;
-      font-size: 15px; font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 6px 16px -8px rgba(28,31,51,0.5);
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-    .cta:hover { background: #262a44; transform: translateY(-1px); }
-    .cta svg { width: 16px; height: 16px; }
 
     /* ============ RIGHT COLUMN — CARD GRID ============ */
     .grid {
@@ -157,6 +144,7 @@
       padding: 18px 20px 12px;
       box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 8px 18px -14px rgba(0,0,0,0.08);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      display: block;
     }
     .card:hover {
       transform: translateY(-2px);
@@ -259,16 +247,16 @@
       background: #fff;
       isolation: isolate;
     }
-    .carousel-slide iframe {
+    .carousel-slide img {
       position: absolute;
-      top: 0; left: 0;
-      width: 1280px;
-      height: 800px;
-      border: 0;
-      pointer-events: none;
-      transform: scale(0.3);
-      transform-origin: top left;
-      background: #fff;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
     }
     .carousel-slide .slide-label {
       position: absolute;
@@ -343,332 +331,16 @@
 <body>
 
   <div class="page">
-    <!-- ============ LEFT SIDEBAR ============ -->
-    <aside class="left">
-      <div class="avatar">
-        <img src="assets/portrait.png" alt="Gabriel Aboy" />
-      </div>
-      <h1 class="name">Gabriel Aboy</h1>
-
-      <div class="meta">
-        <span class="meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          Denver, Colorado
-        </span>
-      </div>
-
-      <p class="tagline">Driven by curiosity and impact.</p>
-
-      <p class="news-pitch">
-        Passionate about building <a href="#" class="link">creative ideas</a> into real products.
-      </p>
-      <p class="blurb">
-        Software engineer experienced in building enterprise systems with a product-minded approach and creative instincts to problem solving.
-      </p>
-
-      <div class="socials" aria-label="social">
-        <a href="https://www.linkedin.com/in/gabrielaboy/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://www.flickr.com/photos/gabrielaboy/" target="_blank" rel="noopener" aria-label="Flickr" title="Flickr">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="5" fill="#0063dc"/><circle cx="17" cy="12" r="5" fill="#ff0084"/></svg>
-        </a>
-        <a href="https://www.instagram.com/espressobytes/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="https://gabrielaboy.medium.com/" target="_blank" rel="noopener" aria-label="Medium" title="Medium">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12Zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.82 24 12Z"/></svg>
-        </a>
-        <a href="mailto:aboy.gabriel@outlook.com" aria-label="Email" title="aboy.gabriel@outlook.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
-        </a>
-      </div>
-    </aside>
-
-    <!-- ============ RIGHT CARD GRID ============ -->
-    <main class="grid">
-
-      <!-- GitHired -->
-      <a href="https://gitapplied.com" target="_blank" rel="noopener" class="card">
-        <div class="card-head">
-          <div class="card-icon ic-gitapplied">
-            <span class="glyph">G</span>
-          </div>
-          <div class="card-name">GitApplied</div>
-          <div class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5Z"/></svg></span>8 users</div>
-        </div>
-        <p class="card-desc">The calm place to run your job search.</p>
-        <div class="carousel" aria-roledescription="carousel" aria-label="GitApplied mocks">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <span class="slide-label">Landing</span>
-              <span class="slide-count">1 / 6</span>
-              <iframe src="mocks/githired/landing.html" loading="lazy" title="GitApplied — Landing"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Board</span>
-              <span class="slide-count">2 / 6</span>
-              <iframe src="mocks/githired/board.html" loading="lazy" title="GitApplied — Board"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Job detail</span>
-              <span class="slide-count">3 / 6</span>
-              <iframe src="mocks/githired/job-detail.html" loading="lazy" title="GitApplied — Job detail"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Tailor</span>
-              <span class="slide-count">4 / 6</span>
-              <iframe src="mocks/githired/tailor.html" loading="lazy" title="GitApplied — Tailor"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Outreach</span>
-              <span class="slide-count">5 / 6</span>
-              <iframe src="mocks/githired/outreach.html" loading="lazy" title="GitApplied — Outreach"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Settings</span>
-              <span class="slide-count">6 / 6</span>
-              <iframe src="mocks/githired/settings.html" loading="lazy" title="GitApplied — Settings"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          scroll for more
-        </div>
-      </a>
-
-      <!-- StackFlow -->
-      <a href="https://mystackflow.com" target="_blank" rel="noopener" class="card">
-        <div class="card-head">
-          <div class="card-icon ic-stackflow">
-            <img src="assets/stackflow-logo.png" alt="StackFlow logo" />
-          </div>
-          <div class="card-name">StackFlow</div>
-          <div class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5Z"/></svg></span>0 users</div>
-        </div>
-        <p class="card-desc">Connect your bank, build a rule, and watch every deposit auto-split into buckets.</p>
-        <div class="carousel" aria-roledescription="carousel" aria-label="StackFlow mocks">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <span class="slide-label">Dashboard</span>
-              <span class="slide-count">1 / 6</span>
-              <iframe src="mocks/bank_automation/dashboard.html" loading="lazy" title="StackFlow — Dashboard"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Accounts</span>
-              <span class="slide-count">2 / 6</span>
-              <iframe src="mocks/bank_automation/accounts.html" loading="lazy" title="StackFlow — Accounts"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Buckets</span>
-              <span class="slide-count">3 / 6</span>
-              <iframe src="mocks/bank_automation/buckets.html" loading="lazy" title="StackFlow — Buckets"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Bucket details</span>
-              <span class="slide-count">4 / 6</span>
-              <iframe src="mocks/bank_automation/bucket-detail.html" loading="lazy" title="StackFlow — Bucket details"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Automations</span>
-              <span class="slide-count">5 / 6</span>
-              <iframe src="mocks/bank_automation/automations.html" loading="lazy" title="StackFlow — Automations"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Calendar</span>
-              <span class="slide-count">6 / 6</span>
-              <iframe src="mocks/bank_automation/calendar.html" loading="lazy" title="StackFlow — Calendar"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          scroll for more
-        </div>
-      </a>
-
-      <!-- I Need A Script -->
-      <article class="card card-coming-soon" data-coming-soon="I Need A Script">
-        <div class="card-head">
-          <div class="card-icon ic-needscript">
-            <span class="glyph">{ }</span>
-          </div>
-          <div class="card-name">I Need A Script</div>
-          <div class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5Z"/></svg></span>0 users</div>
-        </div>
-        <p class="card-desc">Why reinvent the wheel when you can search the marketplace of scripts and Claude skills?</p>
-        <div class="carousel" aria-roledescription="carousel" aria-label="I Need A Script mocks">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <span class="slide-label">Landing page</span>
-              <span class="slide-count">1 / 3</span>
-              <iframe src="scriptstore/landing/" loading="lazy" title="I Need A Script — Landing"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Marketplace list</span>
-              <span class="slide-count">2 / 3</span>
-              <iframe src="scriptstore/landing/marketplace.html" loading="lazy" title="I Need A Script — Marketplace list"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Create flow</span>
-              <span class="slide-count">3 / 3</span>
-              <iframe src="scriptstore/landing/create-flow.html" loading="lazy" title="I Need A Script — Create flow"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          scroll for more
-        </div>
-      </article>
-
-      <!-- Tandem -->
-      <article class="card card-coming-soon" data-coming-soon="Tandem">
-        <div class="card-head">
-          <div class="card-icon ic-tandem">
-            <span class="glyph">⇄</span>
-          </div>
-          <div class="card-name">Tandem</div>
-          <div class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5Z"/></svg></span>0 users</div>
-        </div>
-        <p class="card-desc">An intelligent reminders app that knows when, where, and why to remind you.</p>
-        <div class="carousel" aria-roledescription="carousel" aria-label="Tandem mocks">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <span class="slide-label">Splash</span>
-              <span class="slide-count">1 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=1" loading="lazy" title="Tandem — Splash"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Invite partner</span>
-              <span class="slide-count">2 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=2" loading="lazy" title="Tandem — Invite"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Today</span>
-              <span class="slide-count">3 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=3" loading="lazy" title="Tandem — Today"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">New rule</span>
-              <span class="slide-count">4 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=4" loading="lazy" title="Tandem — New rule"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Parsed rule</span>
-              <span class="slide-count">5 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=5" loading="lazy" title="Tandem — Parsed rule"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Rule library</span>
-              <span class="slide-count">6 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=6" loading="lazy" title="Tandem — Library"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Dinner ping</span>
-              <span class="slide-count">7 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=7" loading="lazy" title="Tandem — Ping"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Smart cancel</span>
-              <span class="slide-count">8 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=8" loading="lazy" title="Tandem — Smart cancel"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Weather trigger</span>
-              <span class="slide-count">9 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=9" loading="lazy" title="Tandem — Weather"></iframe>
-            </div>
-            <div class="carousel-slide">
-              <span class="slide-label">Receipts</span>
-              <span class="slide-count">10 / 10</span>
-              <iframe src="tandem/landing/storyboard.html?f=10" loading="lazy" title="Tandem — Receipts"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          scroll for more
-        </div>
-      </article>
-
-    </main>
+    <aside class="left" data-mount="profile"></aside>
+    <main class="grid" data-mount="projects"></main>
   </div>
 
-  <div class="toast" role="status" aria-live="polite" id="toast">
+  <div class="toast" role="status" aria-live="polite" data-mount="toast">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
     <span data-toast-text>Coming soon</span>
   </div>
 
-  <script>
-    (function () {
-      const toast = document.getElementById('toast');
-      const toastText = toast.querySelector('[data-toast-text]');
-      let hideTimer = null;
-
-      const showToast = (name) => {
-        toastText.textContent = name + ' is coming soon';
-        toast.classList.add('is-visible');
-        if (hideTimer) clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => toast.classList.remove('is-visible'), 2400);
-      };
-
-      document.querySelectorAll('.card-coming-soon').forEach((card) => {
-        card.addEventListener('click', () => {
-          showToast(card.dataset.comingSoon || 'This');
-        });
-      });
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const INTERVAL = 8000;
-      const RESUME_DELAY = 8000;
-
-      document.querySelectorAll('.carousel').forEach((carousel) => {
-        const track = carousel.querySelector('.carousel-track');
-        if (!track) return;
-        const slides = track.querySelectorAll('.carousel-slide');
-        if (slides.length < 2) return;
-
-        let index = 0;
-        let timer = null;
-        let resumeTimer = null;
-
-        const tick = () => {
-          index = (index + 1) % slides.length;
-          track.scrollTo({ left: index * track.clientWidth, behavior: 'smooth' });
-        };
-
-        const start = () => {
-          stop();
-          timer = setInterval(tick, INTERVAL);
-        };
-        const stop = () => {
-          if (timer) { clearInterval(timer); timer = null; }
-        };
-        const pauseAndResume = () => {
-          stop();
-          if (resumeTimer) clearTimeout(resumeTimer);
-          resumeTimer = setTimeout(start, RESUME_DELAY);
-        };
-
-        track.addEventListener('scroll', () => {
-          index = Math.round(track.scrollLeft / track.clientWidth);
-        }, { passive: true });
-
-        carousel.addEventListener('mouseenter', stop);
-        carousel.addEventListener('mouseleave', start);
-        track.addEventListener('pointerdown', pauseAndResume);
-        track.addEventListener('wheel', pauseAndResume, { passive: true });
-        track.addEventListener('touchstart', pauseAndResume, { passive: true });
-
-        start();
-      });
-    })();
-  </script>
+  <script src="render.js" defer></script>
 
 </body>
 </html>

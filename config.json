@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "title": "Gabriel Aboy",
+    "description": "Small useful tools, shipped in public from a kitchen table.",
+    "favicon": "assets/favicon.svg"
+  },
+  "profile": {
+    "name": "Gabriel Aboy",
+    "avatar": "assets/portrait.png",
+    "location": "Denver, Colorado",
+    "tagline": "Driven by curiosity and impact.",
+    "pitch": "Passionate about building creative ideas into real products.",
+    "pitchHighlight": "creative ideas",
+    "bio": "Software engineer experienced in building enterprise systems with a product-minded approach and creative instincts to problem solving."
+  },
+  "socials": [
+    { "label": "LinkedIn",  "url": "https://www.linkedin.com/in/gabrielaboy/",  "icon": "linkedin" },
+    { "label": "Flickr",    "url": "https://www.flickr.com/photos/gabrielaboy/", "icon": "flickr" },
+    { "label": "Instagram", "url": "https://www.instagram.com/espressobytes/",   "icon": "instagram" },
+    { "label": "Medium",    "url": "https://gabrielaboy.medium.com/",            "icon": "medium" },
+    { "label": "Email",     "url": "mailto:aboy.gabriel@outlook.com",            "icon": "email" }
+  ],
+  "projects": [
+    {
+      "name": "GitApplied",
+      "url": "https://gitapplied.com",
+      "description": "The calm place to run your job search.",
+      "badge": "14 users",
+      "icon": { "class": "ic-gitapplied", "glyph": "G" },
+      "slides": [
+        { "image": "assets/projects/gitapplied/01-landing.png",    "label": "Landing" },
+        { "image": "assets/projects/gitapplied/02-board.png",      "label": "Board" },
+        { "image": "assets/projects/gitapplied/03-job-detail.png", "label": "Job detail" },
+        { "image": "assets/projects/gitapplied/04-tailor.png",     "label": "Tailor" },
+        { "image": "assets/projects/gitapplied/05-outreach.png",   "label": "Outreach" },
+        { "image": "assets/projects/gitapplied/06-settings.png",   "label": "Settings" }
+      ]
+    },
+    {
+      "name": "StackFlow",
+      "url": "https://mystackflow.com",
+      "description": "Connect your bank, build a rule, and watch every deposit auto-split into buckets.",
+      "badge": "0 users",
+      "icon": { "class": "ic-stackflow", "image": "assets/stackflow-logo.png", "imageAlt": "StackFlow logo" },
+      "slides": [
+        { "image": "assets/projects/stackflow/01-dashboard.png",      "label": "Dashboard" },
+        { "image": "assets/projects/stackflow/02-accounts.png",       "label": "Accounts" },
+        { "image": "assets/projects/stackflow/03-buckets.png",        "label": "Buckets" },
+        { "image": "assets/projects/stackflow/04-bucket-detail.png",  "label": "Bucket details" },
+        { "image": "assets/projects/stackflow/05-automations.png",    "label": "Automations" },
+        { "image": "assets/projects/stackflow/06-calendar.png",       "label": "Calendar" }
+      ]
+    },
+    {
+      "name": "I Need A Script",
+      "comingSoon": true,
+      "description": "Why reinvent the wheel when you can search the marketplace of scripts and Claude skills?",
+      "badge": "0 users",
+      "icon": { "class": "ic-needscript", "glyph": "{ }" },
+      "slides": [
+        { "image": "assets/projects/needscript/01-landing.png",     "label": "Landing page" },
+        { "image": "assets/projects/needscript/02-marketplace.png", "label": "Marketplace list" },
+        { "image": "assets/projects/needscript/03-create-flow.png", "label": "Create flow" }
+      ]
+    },
+    {
+      "name": "Backoffice",
+      "url": "https://gabrielaboydev.github.io/BackOffice/",
+      "description": "Write plans, not prompts — an AI workflow that turns ideas into shipped features.",
+      "badge": "0 users",
+      "icon": { "class": "ic-purple", "glyph": "B" },
+      "slides": [
+        { "image": "assets/projects/backoffice/02-screenshot.png", "label": "Manifest" }
+      ]
+    },
+    {
+      "name": "Tandem",
+      "comingSoon": true,
+      "description": "An intelligent reminders app that knows when, where, and why to remind you.",
+      "badge": "0 users",
+      "icon": { "class": "ic-tandem", "glyph": "⇄" },
+      "slides": [
+        { "image": "assets/projects/tandem/01-splash.png",          "label": "Splash" },
+        { "image": "assets/projects/tandem/02-invite.png",          "label": "Invite partner" },
+        { "image": "assets/projects/tandem/03-today.png",           "label": "Today" },
+        { "image": "assets/projects/tandem/04-new-rule.png",        "label": "New rule" },
+        { "image": "assets/projects/tandem/05-parsed-rule.png",     "label": "Parsed rule" },
+        { "image": "assets/projects/tandem/06-rule-library.png",    "label": "Rule library" },
+        { "image": "assets/projects/tandem/07-dinner-ping.png",     "label": "Dinner ping" },
+        { "image": "assets/projects/tandem/08-smart-cancel.png",    "label": "Smart cancel" },
+        { "image": "assets/projects/tandem/09-weather-trigger.png", "label": "Weather trigger" },
+        { "image": "assets/projects/tandem/10-receipts.png",        "label": "Receipts" }
+      ]
+    }
+  ],
+  "theme": {
+    "bg":         "#e9e9e9",
+    "card":       "#ffffff",
+    "ink":        "#111111",
+    "ink2":       "#2a2a2a",
+    "muted":      "#6b6b6b",
+    "line":       "#ececec",
+    "pillBg":     "#eaeaff",
+    "pillFg":     "#4f4fcb",
+    "pillDot":    "#7a7af5",
+    "highlight":  "#f4c542",
+    "chart":      "#f6a96b",
+    "chartFill":  "rgba(246,169,107,0.32)",
+    "gridDot":    "#d8d8d8",
+    "dark":       "#1c1f33",
+    "pitchLink":  "#b8860b"
+  }
+}
